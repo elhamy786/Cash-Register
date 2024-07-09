@@ -1,4 +1,4 @@
-const price = 3.26;
+const price = 20; // Adjusted price for the example
 const cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
@@ -118,4 +118,4 @@ cash.addEventListener('keydown', (e) => {
   }
 });
 
-updateUI()
+updateUI();
