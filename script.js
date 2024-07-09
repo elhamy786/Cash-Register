@@ -53,7 +53,7 @@ const checkCashRegister = () => {
   const cashInCents = Math.round(Number(cash.value) * 100);
   const priceInCents = Math.round(price * 100);
 
-  if (cashInCents < priceInCents) {
+  if (cashInCents < priceInCents) { // eslint-disable-next-line no-alert
     alert('Customer does not have enough money to purchase the item');
     cash.value = '';
     return;
@@ -66,7 +66,8 @@ const checkCashRegister = () => {
   }
 
   let changeDue = cashInCents - priceInCents;
-  const reversedCid = [...cid].reverse().map(([denominationName, amount]) => [denominationName, Math.round(amount * 100)]);
+  const reversedCid = [...cid].reverse().map(([denominationName, amount]) => 
+    [denominationName, Math.round(amount * 100)]);
   const denominations = [10000, 2000, 1000, 500, 100, 25, 10, 5, 1];
   const result = { status: 'OPEN', change: [] };
   const totalCID = reversedCid.reduce((prev, [, amount]) => prev + amount, 0);
