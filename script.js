@@ -66,7 +66,12 @@ const checkCashRegister = () => {
   }
 
   let changeDue = cashInCents - priceInCents;
-const reversedCid = [...cid].reverse().map(([denominationName, amount]) => [denominationName, Math.round(amount * 100)]);
+  const reversedCid = [...cid]
+  .reverse()
+  .map(([denominationName, amount]) => [
+    denominationName,
+    Math.round(amount * 100)
+  ]);
   const denominations = [10000, 2000, 1000, 500, 100, 25, 10, 5, 1];
   const result = { status: 'OPEN', change: [] };
   const totalCID = reversedCid.reduce((prev, [, amount]) => prev + amount, 0);
