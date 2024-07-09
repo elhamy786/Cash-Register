@@ -6,7 +6,7 @@ body {
   height: 100vh;
   margin: 0;
 }
-  
+
 main {
   background-image: url(pic3.jpg);
   padding: 50px;
@@ -20,7 +20,7 @@ main {
   background-repeat: no-repeat;
   background-position: center;
 }
-  
+
 .main-video {
   position: absolute;
   top: 50%;
@@ -32,8 +32,7 @@ main {
   height: auto;
   z-index: -1;
 }
-    
-      
+
 h1 {
   font-size: 28px;
   margin-bottom: 20px;
@@ -48,7 +47,7 @@ h1 {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-  
+
 label {
   display: block;
   width: 100%;
@@ -57,21 +56,23 @@ label {
   font-size: 100%;
 }
 
-  input, button, p {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    color: #030000;
-    font-size: 100%;
-  }
-  input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
+input,
+button,
+p {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #030000;
+  font-size: 100%;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 button {
-    color: #fffbfb;
+  color: #fffbfb;
   padding: 15px 25px;
   background-color: #8776dc;
   background-image: radial-gradient(
@@ -99,23 +100,22 @@ button {
   touch-action: manipulation;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  }
-  
+}
+
 button:hover {
   background-color: #ecbbe3;
 }
-  
+ 
 .cash-drawer-display {
   margin-top: 20px;
   text-align: left;
 }
-  
-  
-  .price-screen {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
+
+.price-screen {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .to-hide {
   display: none;
 }
