@@ -33,7 +33,7 @@ const updateUI = (change) => {
   if (change) {
     change.forEach(([changeDenomination, changeAmount]) => {
       const targetArr = cid.find(
-        ([denominationName]) => denominationName === changeDenomination
+        ([denominationName]) => denominationName === changeDenomination,
       );
       targetArr[1] =
         (Math.round(targetArr[1] * 100) - Math.round(changeAmount * 100)) / 100;
@@ -46,7 +46,7 @@ const updateUI = (change) => {
     ${cid
       .map(
         ([denominationName, amount]) =>
-          `<p>${currencyNameMap[denominationName]}: $${amount}</p>`
+          `<p>${currencyNameMap[denominationName]}: $${amount}</p>`,
       )
       .join('')}`;
 };
@@ -55,7 +55,7 @@ const formatResults = (status, change) => {
   displayChangeDue.innerHTML = `<p>Status: ${status}</p>`;
   displayChangeDue.innerHTML += change
     .map(
-      ([denominationName, amount]) => `<p>${denominationName}: $${amount}</p>`
+      ([denominationName, amount]) => `<p>${denominationName}: $${amount}</p>`,
     )
     .join('');
 };
@@ -96,7 +96,7 @@ const checkCashRegister = () => {
     result.status = 'CLOSED';
   }
 
-  for (let i = 0; i < reversedCid.length; i++) {
+  for (let i = 0; i < reversedCid.length; i += 1) {
     if (changeDue >= denominations[i] && changeDue > 0) {
       const [denominationName, total] = reversedCid[i];
       const possibleChange = Math.min(total, changeDue);
