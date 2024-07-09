@@ -27,42 +27,32 @@ const updateUI = (change) => {
     FIVE: 'Fives',
     TEN: 'Tens',
     TWENTY: 'Twenties',
-    'ONE HUNDRED':'Hundreds',
+    'ONE HUNDRED': 'Hundreds',
   };
+
   // Update cid if change is passed in
   if (change) {
     change.forEach(([changeDenomination, changeAmount]) => {
-      const targetArr = cid.find(
-        ([denominationName]) => denominationName === changeDenomination,
-      );
-      targetArr[1] =
-        (Math.round(targetArr[1] * 100) - Math.round(changeAmount * 100)) / 100;
+      const targetArr = cid.find(([denominationName]) => denominationName === changeDenomination);
+      targetArr[1] = (Math.round(targetArr[1] * 100) - Math.round(changeAmount * 100)) / 100;
     });
   }
 
   cash.value = '';
   priceScreen.textContent = `Total: $${price}`;
   cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p>
-    ${cid
-    .map(
-      ([denominationName, amount]) =>
-        `<p>${currencyNameMap[denominationName]}: $${amount}</p>`,
-    )
-    .join('')}`;
+    ${cid.map(([denominationName, amount]) => `<p>${currencyNameMap[denominationName]}: $${amount}</p>`).join('')}`;
 };
 
 const formatResults = (status, change) => {
   displayChangeDue.innerHTML = `<p>Status: ${status}</p>`;
-  displayChangeDue.innerHTML += change
-    .map(
-      ([denominationName, amount]) => `<p>${denominationName}: $${amount}</p>`,
-    )
-    .join('');
+  displayChangeDue.innerHTML += change.map(([denominationName, amount]) => `<p>${denominationName}: $${amount}</p>`).join('');
 };
 
 const checkCashRegister = () => {
   const cashInCents = Math.round(Number(cash.value) * 100);
   const priceInCents = Math.round(price * 100);
+
   if (cashInCents < priceInCents) {
     alert('Customer does not have enough money to purchase the item');
     cash.value = '';
@@ -76,12 +66,7 @@ const checkCashRegister = () => {
   }
 
   let changeDue = cashInCents - priceInCents;
-  const reversedCid = [...cid]
-    .reverse()
-    .map(([denominationName, amount]) => [
-      denominationName,
-      Math.round(amount * 100),
-    ]);
+  const reversedCid = [...cid].reverse().map(([denominationName, amount]) => [denominationName, Math.round(amount * 100)]);
   const denominations = [10000, 2000, 1000, 500, 100, 25, 10, 5, 1];
   const result = { status: 'OPEN', change: [] };
   const totalCID = reversedCid.reduce((prev, [, amount]) => prev + amount, 0);
@@ -108,6 +93,7 @@ const checkCashRegister = () => {
       }
     }
   }
+
   if (changeDue > 0) {
     displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>';
     return;
@@ -132,4 +118,4 @@ cash.addEventListener('keydown', (e) => {
   }
 });
 
-updateUI();
+updateUI()
