@@ -27,7 +27,7 @@ const updateUI = (change) => {
     FIVE: 'Fives',
     TEN: 'Tens',
     TWENTY: 'Twenties',
-    'ONE HUNDRED': 'Hundreds',
+    'ONE HUNDRED':'Hundreds',
   };
   // Update cid if change is passed in
   if (change) {
@@ -44,11 +44,11 @@ const updateUI = (change) => {
   priceScreen.textContent = `Total: $${price}`;
   cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p>
     ${cid
-      .map(
-        ([denominationName, amount]) =>
-          `<p>${currencyNameMap[denominationName]}: $${amount}</p>`,
-      )
-      .join('')}`;
+    .map(
+      ([denominationName, amount]) =>
+        `<p>${currencyNameMap[denominationName]}: $${amount}</p>`,
+    )
+    .join('')}`;
 };
 
 const formatResults = (status, change) => {
@@ -70,8 +70,7 @@ const checkCashRegister = () => {
   }
 
   if (cashInCents === priceInCents) {
-    displayChangeDue.innerHTML =
-      '<p>No change due - customer paid with exact cash</p>';
+    displayChangeDue.innerHTML = '<p>No change due - customer paid with exact cash</p>';
     cash.value = '';
     return;
   }
