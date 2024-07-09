@@ -76,18 +76,18 @@ button {
   color: #fffbfb;
   padding: 15px 25px;
   background-color: #8776dc;
-  background-image: 
+  background-image:
     radial-gradient(
       93% 87% at 87% 89%,
-    rgba(255, 255, 255, 0.23) 0%,
+      rgba(255, 255, 255, 0.23) 0%,
       transparent 86.18%
     ),
     radial-gradient(
-    66% 66% at 26% 20%,
-  rgba(255, 255, 255, 0.55) 0%,
-  rgba(255, 255, 255, 0) 69.79%,
-  rgba(255, 255, 255, 0) 100%
-  );
+      66% 66% at 26% 20%,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0) 69.79%,
+      rgba(255, 255, 255, 0) 100%
+    );
   border-radius: 14px;
   font-weight: bold;
   font-size: 16px;
@@ -102,7 +102,7 @@ button {
 button:hover {
   background-color: #ecbbe3;
 }
- 
+
 .cash-drawer-display {
   margin-top: 20px;
   text-align: left;
