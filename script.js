@@ -1,5 +1,5 @@
-let price = 3.26;
-let cid = [
+const price = 3.26;
+const cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
   ['DIME', 3.1],
@@ -8,7 +8,7 @@ let cid = [
   ['FIVE', 55],
   ['TEN', 20],
   ['TWENTY', 60],
-  ['ONE HUNDRED', 100]
+  ['ONE HUNDRED', 100],
 ];
 
 const displayChangeDue = document.getElementById('change-due');
@@ -47,11 +47,11 @@ const checkCashRegister = () => {
     .reverse()
     .map(([denominationName, amount]) => [
       denominationName,
-      Math.round(amount * 100)
+      Math.round(amount * 100),
     ]);
   const denominations = [10000, 2000, 1000, 500, 100, 25, 10, 5, 1];
   const result = { status: 'OPEN', change: [] };
-  const totalCID = reversedCid.reduce((prev, [_, amount]) => prev + amount, 0);
+  const totalCID = reversedCid.reduce((prev, [, amount]) => prev + amount, 0);
 
   if (totalCID < changeDue) {
     displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>';
@@ -62,7 +62,7 @@ const checkCashRegister = () => {
     result.status = 'CLOSED';
   }
 
-  for (let i = 0; i <= reversedCid.length; i++) {
+  for (let i = 0; i < reversedCid.length; i++) {
     if (changeDue >= denominations[i] && changeDue > 0) {
       const [denominationName, total] = reversedCid[i];
       const possibleChange = Math.min(total, changeDue);
@@ -91,7 +91,7 @@ const checkResults = () => {
   checkCashRegister();
 };
 
-const updateUI = change => {
+const updateUI = (change) => {
   const currencyNameMap = {
     PENNY: 'Pennies',
     NICKEL: 'Nickels',
@@ -101,13 +101,13 @@ const updateUI = change => {
     FIVE: 'Fives',
     TEN: 'Tens',
     TWENTY: 'Twenties',
-    'ONE HUNDRED': 'Hundreds'
+    'ONE HUNDRED': 'Hundreds',
   };
   // Update cid if change is passed in
   if (change) {
     change.forEach(([changeDenomination, changeAmount]) => {
       const targetArr = cid.find(
-        ([denominationName, _]) => denominationName === changeDenomination
+        ([denominationName]) => denominationName === changeDenomination
       );
       targetArr[1] =
         (Math.round(targetArr[1] * 100) - Math.round(changeAmount * 100)) / 100;
@@ -122,13 +122,12 @@ const updateUI = change => {
         ([denominationName, amount]) =>
           `<p>${currencyNameMap[denominationName]}: $${amount}</p>`
       )
-      .join('')}
-  `;
+      .join('')}`;
 };
 
 purchaseBtn.addEventListener('click', checkResults);
 
-cash.addEventListener('keydown', e => {
+cash.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     checkResults();
   }
