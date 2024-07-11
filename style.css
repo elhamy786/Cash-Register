@@ -61,7 +61,6 @@ label {
   font-size: 25px;
   font-style: italic;
   color: #940707ab;
-
 }
 
 .user-input {
@@ -169,12 +168,12 @@ label {
 @media (max-width: 768px) {
   h1 {
       font-size: 2rem;
-  }
+    }
 
   .user-input {
       width: 80%;
       font-size: 1rem;
-  }
+    }
 
   .check-btn-styles {
       width: 80%;
