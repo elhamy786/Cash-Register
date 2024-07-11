@@ -167,50 +167,52 @@ label {
 
 @media (max-width: 768px) {
   h1 {
-      font-size: 2rem;
-    }
-
-  .user-input {
-      width: 80%;
-      font-size: 1rem;
-    }
-
-  .check-btn-styles {
-      width: 80%;
-      font-size: 1rem;
+    font-size: 2rem;
   }
 
-  .top-register, .bottom-register {
-      width: 90%;
+  .user-input {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  .check-btn-styles {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  .top-register, 
+  .bottom-register {
+    width: 90%;
   }
 
   .price-screen {
-      width: 80%;
-      font-size: 1rem;
+    width: 80%;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .user-input {
-      width: 100%;
-      font-size: 0.875rem;
+    width: 100%;
+    font-size: 0.875rem;
   }
 
   .check-btn-styles {
-      width: 100%;
-      font-size: 0.875rem;
+    width: 100%;
+    font-size: 0.875rem;
   }
 
-  .top-register, .bottom-register {
-      width: 100%;
+  .top-register, 
+  .bottom-register {
+    width: 100%;
   }
 
   .price-screen {
-      width: 100%;
-      font-size: 0.875rem;
+    width: 100%;
+    font-size: 0.875rem;
   }
 }
