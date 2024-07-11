@@ -27,7 +27,7 @@ cash.addEventListener('keydown', (e) => {
 ## Demo 📸
 [Live Demo](https://elhamy786.github.io/Cash-Register/)
 
-![Screenshot](./Picture1.png)
+![Screenshot](./Picture2.png)
 
 ## Technologies Used 🛠️
 - HTML
